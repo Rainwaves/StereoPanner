@@ -1696,10 +1696,10 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-12" : [ "vst~", "vst~", 0 ],
-			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-16" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
+			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
+			"obj-12" : [ "vst~", "vst~", 0 ],
+			"obj-10::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

@@ -38,12 +38,13 @@ del YourVstName.dll
 4) Move or copy this file to the C:/ folder (this is where Max will try to find deleteDLL.bat)
 
 5) Finally, navigate to your builds output folder (this is where your VST file is created when you compile 
-   your code), create a new blank .txt file, save it, and rename it "blankDLL.dll"
+   your code), create a new blank .txt file, save it, and rename it "blankDLL.dll". 
 
 OR
 
 Simply copy and paste the blankDLL file included in this repository to your builds output folder instead!
 
-
+!!  Max will try to load the blankDLL.dll file and an error may pop up about it having no VST format,
+    but it doesn't matter.  It's just a way of tricking the machine...
 
 

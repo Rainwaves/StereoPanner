@@ -62,6 +62,12 @@ void StereoPannerAudioProcessorEditor::paint (Graphics& g)
 
 	//Draw text to screen
     g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
+
+
+	//Draw Waveform
+	DrawWaveform(g);
+
+
 }
 
 void StereoPannerAudioProcessorEditor::resized()
@@ -83,5 +89,21 @@ void StereoPannerAudioProcessorEditor::resized()
 void StereoPannerAudioProcessorEditor::sliderValueChanged(Slider* slider)
 {
 	processor.gui_Slider1 = gui_Slider1.getValue();
+
+
+
 }
 
+
+void StereoPannerAudioProcessorEditor::DrawWaveform(Graphics& g)
+{
+
+	if (processor.gui_Slider1 >= 50.0)
+	{
+		   g.setColour(Colours::green);
+	}
+	else { g.setColour(Colours::blue); }
+
+
+	g.drawLine(10, 300, 590, 300, 5);
+}

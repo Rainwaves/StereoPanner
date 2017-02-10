@@ -168,11 +168,10 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 		//Reduce the amplitude of each sample in the block for the channels
 		channelDataL[i] = channelDataL[i] * gui_Slider1;
 		channelDataR[i] = channelDataR[i] * gui_Slider1;
-
 	}
 
-	
 
+	
 }
 
 //==============================================================================

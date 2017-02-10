@@ -29,6 +29,10 @@ public:
     //==============================================================================
     void paint (Graphics&) override;
     void resized() override;
+	
+	//Non-Default Code
+
+	void DrawWaveform(Graphics& g);
 
 private:
 
