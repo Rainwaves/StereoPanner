@@ -123,6 +123,11 @@ bool StereoPannerAudioProcessor::isBusesLayoutSupported (const BusesLayout& layo
 
 void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
 {
+
+	//Default Code  
+
+
+	/*
     const int totalNumInputChannels  = getTotalNumInputChannels();
     const int totalNumOutputChannels = getTotalNumOutputChannels();
 
@@ -143,11 +148,12 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 
         // ..do something to the data...
     }
+	*/
 
 
 	//________________AAP LAB 2______________________//
 	
-	/*
+	
 	// Retrieve the total number of samples in the buffer for this block
 	int numSamples = buffer.getNumSamples();
 
@@ -160,11 +166,12 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 	for (int i = 0; i < numSamples; ++i) //!! Why ++i and not i++?
 	{
 		//Reduce the amplitude of each sample in the block for the channels
-		channelDataL[i] = channelDataL[i] * 0.5;
-		channelDataL[i] = channelDataL[i] * 0.5;
+		channelDataL[i] = channelDataL[i] * gui_Slider1;
+		channelDataR[i] = channelDataR[i] * gui_Slider1;
+
 	}
 
-	*/
+	
 
 }
 

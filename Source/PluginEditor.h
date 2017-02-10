@@ -18,7 +18,9 @@
 //==============================================================================
 /**
 */
-class StereoPannerAudioProcessorEditor  : public AudioProcessorEditor
+class StereoPannerAudioProcessorEditor  : public AudioProcessorEditor,
+	                                      private Slider::Listener
+
 {
 public:
     StereoPannerAudioProcessorEditor (StereoPannerAudioProcessor&);
@@ -29,9 +31,14 @@ public:
     void resized() override;
 
 private:
+
+	void sliderValueChanged(Slider* slider) override; //slider listener callback function
+
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     StereoPannerAudioProcessor& processor;
+
+	Slider gui_Slider1;
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (StereoPannerAudioProcessorEditor)
 };

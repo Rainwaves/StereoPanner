@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 1002.0, 85.0, 876.0, 913.0 ],
+		"rect" : [ 42.0, 85.0, 876.0, 913.0 ],
 		"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -39,10 +39,71 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "gain~",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "signal", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 625.0, 708.666687, 22.0, 140.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 0.070206, 0.377472, 0.521117, 1.0 ],
+					"bgmode" : 1,
+					"border" : 1,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-10",
+					"lockeddragscroll" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "demosound.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"offset" : [ 0.0, 0.0 ],
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 453.0, 180.0, 224.0, 92.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"format" : 6,
+					"id" : "obj-9",
+					"maxclass" : "flonum",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 622.5, 542.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 625.0, 644.0, 45.0, 22.0 ],
+					"style" : "",
+					"text" : "cycle~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_autogradient" : 0.0,
 					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_color1" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -78,7 +139,7 @@
 					"bgcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
-					"bgfillcolor_autogradient" : 0,
+					"bgfillcolor_autogradient" : 0.0,
 					"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 					"bgfillcolor_color1" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
@@ -410,14 +471,14 @@
 						"subtype" : "Undefined",
 						"embed" : 1,
 						"snapshot" : 						{
-							"pluginname" : "MultiOutSynth.dll",
-							"plugindisplayname" : "MultiOutSynth",
-							"pluginsavedname" : "C:/JUCE/examples/PlugInSamples/MultiOutSynth/Builds/VisualStudio2013/x64/Debug/MultiOutSynth.dll",
+							"pluginname" : "StereoPanner.dll",
+							"plugindisplayname" : "StereoPanner",
+							"pluginsavedname" : "~/Desktop/StereoPanner/Builds/VisualStudio2013/x64/Debug/StereoPanner.dll",
 							"pluginsaveduniqueid" : 0,
 							"version" : 1,
 							"isbank" : 0,
 							"isbase64" : 1,
-							"blob" : "60.CMlaKA....fQPMDZ....AzzaSkG....Y....A..........................................."
+							"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
 						}
 ,
 						"snapshotlist" : 						{
@@ -426,28 +487,28 @@
 									"filetype" : "C74Snapshot",
 									"version" : 2,
 									"minorversion" : 0,
-									"name" : "MultiOutSynth",
-									"origin" : "MultiOutSynth.dll",
+									"name" : "StereoPanner",
+									"origin" : "StereoPanner.dll",
 									"type" : "VST",
-									"subtype" : "Instrument",
-									"embed" : 0,
+									"subtype" : "AudioEffect",
+									"embed" : 1,
 									"snapshot" : 									{
-										"pluginname" : "MultiOutSynth.dll",
-										"plugindisplayname" : "MultiOutSynth",
-										"pluginsavedname" : "C:/JUCE/examples/PlugInSamples/MultiOutSynth/Builds/VisualStudio2013/x64/Debug/MultiOutSynth.dll",
+										"pluginname" : "StereoPanner.dll",
+										"plugindisplayname" : "StereoPanner",
+										"pluginsavedname" : "~/Desktop/StereoPanner/Builds/VisualStudio2013/x64/Debug/StereoPanner.dll",
 										"pluginsaveduniqueid" : 0,
 										"version" : 1,
 										"isbank" : 0,
 										"isbase64" : 1,
-										"blob" : "60.CMlaKA....fQPMDZ....AzzaSkG....Y....A..........................................."
+										"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
 									}
 ,
 									"fileref" : 									{
-										"name" : "MultiOutSynth",
-										"filename" : "MultiOutSynth.maxsnap",
+										"name" : "StereoPanner",
+										"filename" : "StereoPanner.maxsnap",
 										"filepath" : "~/Documents/Max 7/Snapshots",
 										"filepos" : -1,
-										"snapshotfileid" : "2a49f3d2f6748bf871aac2cb59f8bc5b"
+										"snapshotfileid" : "f3caf02941007a6b597f76fe3332648f"
 									}
 
 								}
@@ -1297,6 +1358,51 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-11", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-16", 1 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -1464,7 +1570,7 @@
 					"destination" : [ "obj-14", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
-					"midpoints" : [ 711.666565, 446.000031, 378.249954, 446.000031, 378.249954, 93.000031, 44.833328, 93.000031 ],
+					"midpoints" : [ 711.666565, 446.000031, 688.249954, 446.000031, 688.249954, 93.000031, 44.833328, 93.000031 ],
 					"source" : [ "obj-27", 0 ]
 				}
 
@@ -1579,16 +1685,57 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-12" : [ "vst~", "vst~", 0 ],
+			"obj-10::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-16" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-12" : [ "vst~", "vst~", 0 ]
+			"obj-10::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "MultiOutSynth.maxsnap",
+				"name" : "StereoPanner.maxsnap",
 				"bootpath" : "~/Documents/Max 7/Snapshots",
 				"type" : "mx@s",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "demosound.maxpat",
+				"bootpath" : "C74:/help/msp",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "sine.svg",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
+				"type" : "svg ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "saw.svg",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
+				"type" : "svg ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "square.svg",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
+				"type" : "svg ",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "random.svg",
+				"bootpath" : "C74:/media/max/picts/m4l-picts",
+				"type" : "svg ",
 				"implicit" : 1
 			}
  ],
