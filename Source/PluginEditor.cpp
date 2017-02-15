@@ -1,109 +1,113 @@
 /*
   ==============================================================================
 
-    This file was auto-generated!
+  This is an automatically generated GUI class created by the Projucer!
 
-    It contains the basic framework code for a JUCE plugin editor.
+  Be careful when adding custom code to these files, as only the code within
+  the "//[xyz]" and "//[/xyz]" sections will be retained when the file is loaded
+  and re-saved.
+
+  Created with Projucer version: 4.3.0
+
+  ------------------------------------------------------------------------------
+
+  The Projucer is part of the JUCE library - "Jules' Utility Class Extensions"
+  Copyright (c) 2015 - ROLI Ltd.
 
   ==============================================================================
 */
 
-#include "PluginProcessor.h"
+//[Headers] You can add your own extra header files here...
+//[/Headers]
+
 #include "PluginEditor.h"
 
 
+//[MiscUserDefs] You can add your own user definitions and misc code here...
+//[/MiscUserDefs]
+
 //==============================================================================
 StereoPannerAudioProcessorEditor::StereoPannerAudioProcessorEditor (StereoPannerAudioProcessor& p)
-    : AudioProcessorEditor (&p), processor (p)
+    : AudioProcessorEditor(p), processor(p)
 {
-    // Make sure that before the constructor has finished, you've set the
-    // editor's size to whatever you need it to be.
-    setSize (400, 300);
-
-	//Slider example
-
-	// these define the parameters of our slider object
-	gui_Slider1.setSliderStyle(Slider::LinearBarVertical);
-	gui_Slider1.setRange(0.0, 127.0, 1.0);
-	gui_Slider1.setTextBoxStyle(Slider::NoTextBox, false, 90, 0);
-	gui_Slider1.setPopupDisplayEnabled(true, this);
-	gui_Slider1.setTextValueSuffix("text bubble");
-	gui_Slider1.setValue(1.0);
-
-	// this function adds the slider to the editor
-	addAndMakeVisible(&gui_Slider1);
-
-	//add the listener to the slider
-	gui_Slider1.addListener(this);
+    //[Constructor_pre] You can add your own custom stuff here..
+    //[/Constructor_pre]
 
 
+    //[UserPreSize]
+    //[/UserPreSize]
+
+    setSize (600, 400);
 
 
+    //[Constructor] You can add your own custom stuff here..
+	startTimer(200);//starts timer with interval of 200ms
+    //[/Constructor]
 }
 
 StereoPannerAudioProcessorEditor::~StereoPannerAudioProcessorEditor()
 {
+    //[Destructor_pre]. You can add your own custom destruction code here..
+    //[/Destructor_pre]
+
+
+
+    //[Destructor]. You can add your own custom destruction code here..
+    //[/Destructor]
 }
 
 //==============================================================================
 void StereoPannerAudioProcessorEditor::paint (Graphics& g)
 {
+    //[UserPrePaint] Add your own custom painting code here..
+    //[/UserPrePaint]
 
-	//Hello World example
-
-	//Fill the whole window
     g.fillAll (Colours::white);
 
-	//Set current drawing colour
-    g.setColour (Colours::black);
-
-	//Set font
-    g.setFont (15.0f);
-
-	//Draw text to screen
-    g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
-
-
-	//Draw Waveform  (doesnt work - just experimenting with ideas for how to draw signals)
-	DrawWaveform(g);
-
-
+    //[UserPaint] Add your own custom painting code here..
+    //[/UserPaint]
 }
 
 void StereoPannerAudioProcessorEditor::resized()
 {
-    // This is generally where you'll want to lay out the positions of any
-    // subcomponents in your editor..
+    //[UserPreResize] Add your own custom resize code here..
+    //[/UserPreResize]
 
-	//Slider example
-	
-	// sets the position and size of the slider with arguments (x, y, width, height)
-	gui_Slider1.setBounds(40, 30, 20, getHeight() - 60);
-
-
+    //[UserResized] Add your own custom resize handling here..
+    //[/UserResized]
 }
 
-//Listeners
 
-//Example Slider
-void StereoPannerAudioProcessorEditor::sliderValueChanged(Slider* slider)
+
+//[MiscUserCode] You can add your own definitions of your custom methods or any other code here...
+void StereoPannerAudioProcessorEditor::timerCallback()
 {
-	processor.gui_Slider1 = gui_Slider1.getValue();
-
-
-
+	//exchange any data you want between UI elements and the Plugin "ourProcessor"
 }
-
-//Doesnt work - just experimenting with ways to draw signals
-void StereoPannerAudioProcessorEditor::DrawWaveform(Graphics& g)
-{
-
-	if (processor.gui_Slider1 >= 50.0)
-	{
-		   g.setColour(Colours::green);
-	}
-	else { g.setColour(Colours::blue); }
+//[/MiscUserCode]
 
 
-	g.drawLine(10, 300, 590, 300, 5);
-}
+//==============================================================================
+#if 0
+/*  -- Projucer information section --
+
+    This is where the Projucer stores the metadata that describe this GUI layout, so
+    make changes in here at your peril!
+
+BEGIN_JUCER_METADATA
+
+<JUCER_COMPONENT documentType="Component" className="StereoPannerAudioProcessorEditor"
+                 componentName="" parentClasses="public AudioProcessorEditor, public Timer"
+                 constructorParams="StereoPannerAudioProcessor&amp; p" variableInitialisers="AudioProcessorEditor(p), processor(p)"
+                 snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
+                 fixedSize="0" initialWidth="600" initialHeight="400">
+  <BACKGROUND backgroundColour="ffffffff"/>
+</JUCER_COMPONENT>
+
+END_JUCER_METADATA
+*/
+#endif
+
+
+//[EndFile] You can add extra defines here...
+//[/EndFile]

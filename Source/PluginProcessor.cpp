@@ -25,6 +25,10 @@ StereoPannerAudioProcessor::StereoPannerAudioProcessor()
                        )
 #endif
 {
+
+	//Initialize Member Vars
+	gui_Slider1 = 0.0f;
+
 }
 
 StereoPannerAudioProcessor::~StereoPannerAudioProcessor()
