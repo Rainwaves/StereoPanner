@@ -61,6 +61,7 @@ public:
 	//Vars 
 
 	float gui_Slider1;
+	float gui_PanPosition;
 
 
 
