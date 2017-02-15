@@ -28,6 +28,7 @@ StereoPannerAudioProcessor::StereoPannerAudioProcessor()
 
 	//Initialize Member Vars
 	gui_Slider1 = 0.0f;
+	gui_PanPosition = 0.0f;
 
 }
 
@@ -155,6 +156,8 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 	*/
 
 
+	/*
+
 	//________________AAP LAB 2______________________//
 	
 	
@@ -174,7 +177,29 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 		channelDataR[i] = channelDataR[i] * gui_Slider1;
 	}
 
+	*/
 
+
+	//________________AAP LAB 3______________________//
+
+	int numSamples = buffer.getNumSamples();
+	float *channelDataL = buffer.getWritePointer(0);
+	float *channelDataR = buffer.getWritePointer(1);
+
+	//Calculate p'
+	float pDash = (gui_PanPosition + 1.0f) / 2.0f;
+
+	for (int i = 0; i < numSamples; ++i) 
+	{
+		//Simple linear panning algorithm (gL = (1-p'); gR = (p'); p'=((p+1)/2)
+		channelDataL[i] = channelDataL[i] * (1.0 - pDash);
+		channelDataR[i] = channelDataR[i] * pDash;
+
+		//Scale gain (Output is too hot for some reason)
+		channelDataL[i] = channelDataL[i] * 0.5;
+		channelDataR[i] = channelDataR[i] * 0.5;
+
+	}
 	
 }
 
