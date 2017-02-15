@@ -13,6 +13,10 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 
+#include <cmath>
+
+#define PI 3.14159
+
 
 //==============================================================================
 /**
@@ -60,8 +64,9 @@ public:
 
 	//Vars 
 
-	float gui_Slider1;
+	
 	float gui_PanPosition;
+	bool gui_PanMode;
 
 
 

@@ -478,7 +478,7 @@
 							"version" : 1,
 							"isbank" : 0,
 							"isbase64" : 1,
-							"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
+							"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
 						}
 ,
 						"snapshotlist" : 						{
@@ -500,7 +500,7 @@
 										"version" : 1,
 										"isbank" : 0,
 										"isbase64" : 1,
-										"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
+										"blob" : "60.CMlaKA....fQPMDZ....ADjdzAG....Y....A..........................................."
 									}
 ,
 									"fileref" : 									{

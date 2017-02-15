@@ -27,8 +27,12 @@ StereoPannerAudioProcessor::StereoPannerAudioProcessor()
 {
 
 	//Initialize Member Vars
-	gui_Slider1 = 0.0f;
+	
+	//GUI
 	gui_PanPosition = 0.0f;
+	gui_PanMode = false;
+
+	
 
 }
 
@@ -186,21 +190,41 @@ void StereoPannerAudioProcessor::processBlock (AudioSampleBuffer& buffer, MidiBu
 	float *channelDataL = buffer.getWritePointer(0);
 	float *channelDataR = buffer.getWritePointer(1);
 
-	//Calculate p'
-	float pDash = (gui_PanPosition + 1.0f) / 2.0f;
+	float pDash;
 
-	for (int i = 0; i < numSamples; ++i) 
+	if (!gui_PanMode)
 	{
 		//Simple linear panning algorithm (gL = (1-p'); gR = (p'); p'=((p+1)/2)
+		pDash = (gui_PanPosition + 1.0f) / 2.0f;
+
+		for (int i = 0; i < numSamples; ++i)
+		{
 		channelDataL[i] = channelDataL[i] * (1.0 - pDash);
 		channelDataR[i] = channelDataR[i] * pDash;
-
-		//Scale gain (Output is too hot for some reason)
-		channelDataL[i] = channelDataL[i] * 0.5;
-		channelDataR[i] = channelDataR[i] * 0.5;
-
+		}
+		
 	}
 	
+	else
+	{
+		//Constant power panning algorithm
+	    pDash = PI*(gui_PanPosition + 1.0f) / 4.0f;
+
+		for (int i = 0; i < numSamples; ++i)
+		{
+			channelDataL[i] = channelDataL[i] * cos(pDash);
+			channelDataR[i] = channelDataR[i] * sin(pDash);
+		}
+	}
+
+	
+
+	//Scale gain (Output is too hot for some reason)
+	for (int i = 0; i < numSamples; ++i)
+	{
+		channelDataL[i] = channelDataL[i] * 0.5;
+		channelDataR[i] = channelDataR[i] * 0.5;
+	}
 }
 
 //==============================================================================

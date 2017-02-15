@@ -23,6 +23,7 @@
 //[Headers]     -- You can add your own extra header files here --
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "PluginProcessor.h"
+
 //[/Headers]
 
 
@@ -37,7 +38,8 @@
 */
 class StereoPannerAudioProcessorEditor  : public AudioProcessorEditor,
                                           public Timer,
-                                          public SliderListener
+                                          public SliderListener,
+                                          public ButtonListener
 {
 public:
     //==============================================================================
@@ -52,6 +54,7 @@ public:
     void paint (Graphics& g) override;
     void resized() override;
     void sliderValueChanged (Slider* sliderThatWasMoved) override;
+    void buttonClicked (Button* buttonThatWasClicked) override;
 
 
 
@@ -62,6 +65,7 @@ private:
 
     //==============================================================================
     ScopedPointer<Slider> sliderPanPosition;
+    ScopedPointer<ToggleButton> buttonPanMode;
 
 
     //==============================================================================

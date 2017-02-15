@@ -40,6 +40,10 @@ StereoPannerAudioProcessorEditor::StereoPannerAudioProcessorEditor (StereoPanner
     sliderPanPosition->setColour (Slider::rotarySliderFillColourId, Colour (0x7f00ff2c));
     sliderPanPosition->addListener (this);
 
+    addAndMakeVisible (buttonPanMode = new ToggleButton ("pan mode switch"));
+    buttonPanMode->setButtonText (TRANS("Pan Mode"));
+    buttonPanMode->addListener (this);
+
 
     //[UserPreSize]
     //[/UserPreSize]
@@ -58,6 +62,7 @@ StereoPannerAudioProcessorEditor::~StereoPannerAudioProcessorEditor()
     //[/Destructor_pre]
 
     sliderPanPosition = nullptr;
+    buttonPanMode = nullptr;
 
 
     //[Destructor]. You can add your own custom destruction code here..
@@ -82,6 +87,7 @@ void StereoPannerAudioProcessorEditor::resized()
     //[/UserPreResize]
 
     sliderPanPosition->setBounds (8, 16, 176, 48);
+    buttonPanMode->setBounds (8, 64, 150, 24);
     //[UserResized] Add your own custom resize handling here..
     //[/UserResized]
 }
@@ -100,6 +106,30 @@ void StereoPannerAudioProcessorEditor::sliderValueChanged (Slider* sliderThatWas
 
     //[UsersliderValueChanged_Post]
     //[/UsersliderValueChanged_Post]
+}
+
+void StereoPannerAudioProcessorEditor::buttonClicked (Button* buttonThatWasClicked)
+{
+    //[UserbuttonClicked_Pre]
+    //[/UserbuttonClicked_Pre]
+
+    if (buttonThatWasClicked == buttonPanMode)
+    {
+        //[UserButtonCode_panMode] -- add your button handler code here..
+		if (buttonPanMode->getToggleState())
+		{
+			processor.gui_PanMode = true;
+		}
+		else
+		{
+			processor.gui_PanMode = false;
+		}
+		
+        //[/UserButtonCode_panMode]
+    }
+
+    //[UserbuttonClicked_Post]
+    //[/UserbuttonClicked_Post]
 }
 
 
@@ -132,6 +162,9 @@ BEGIN_JUCER_METADATA
           min="-1" max="1" int="0" style="Rotary" textBoxPos="TextBoxLeft"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1"
           needsCallback="1"/>
+  <TOGGLEBUTTON name="pan mode switch" id="24fcafa222dbf0fc" memberName="panMode"
+                virtualName="" explicitFocusOrder="0" pos="8 64 150 24" buttonText="Pan Mode"
+                connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
 END_JUCER_METADATA
