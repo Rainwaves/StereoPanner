@@ -64,7 +64,7 @@ void StereoPannerAudioProcessorEditor::paint (Graphics& g)
     g.drawFittedText ("Hello World!", getLocalBounds(), Justification::centred, 1);
 
 
-	//Draw Waveform
+	//Draw Waveform  (doesnt work - just experimenting with ideas for how to draw signals)
 	DrawWaveform(g);
 
 
@@ -94,7 +94,7 @@ void StereoPannerAudioProcessorEditor::sliderValueChanged(Slider* slider)
 
 }
 
-
+//Doesnt work - just experimenting with ways to draw signals
 void StereoPannerAudioProcessorEditor::DrawWaveform(Graphics& g)
 {
 
